@@ -1,0 +1,27 @@
+<!-- geolocation.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Geolocation Script</title>
+  <script>
+    // Request permission to access GPS location
+    navigator.geolocation.getCurrentPosition(
+      function(position) {
+        // Success callback
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        // Handle the retrieved latitude and longitude here (e.g., submit to a data source)
+        // You can also update your Power App controls with these values if needed
+        alert('Latitude: ' + latitude + ', Longitude: ' + longitude);
+      },
+      function(error) {
+        // Error callback
+        // Handle errors here (e.g., user denies permission)
+        alert('Error accessing GPS location: ' + error.message);
+      }
+    );
+  </script>
+</head>
+<body>
+</body>
+</html>
